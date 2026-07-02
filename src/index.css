@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* Modo Obscuro */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@import "tailwindcss";
+
+@theme {
+  --font-playfair: "Playfair Display", serif;
+  --font-inter: "Inter", sans-serif;
+
+  --color-brand-background: #f4f2ea;
+  --color-brand-border: #c7c4bc;
+
+  --color-title-primary: #130807;
+  --color-title-secondary: #e06371;
+
+  --color-text-primary: #130807;
+  --color-text-secondary: #60514f;
+
+  --color-interactive-background-primary: #130807;
+  --color-interactive-background-secondary: ##f4f2ea;
+  --color-interactive-border-primary: #c7c4bc;
+  --color-interactive-hover: #130807;
+
+  --color-navbar-background: #f4f2ea;
+  --color-navbar-border: #dcd7c9;
+  --color-navbar-hover: #db6371;
+
+  --color-navbar-text-primary: #554e4b;
+  --color-navbar-text-secondary: #ffffff;
+}
+
+body {
+  font-family: var(--font-inter);
+  background: #f4f2ea;
+}
