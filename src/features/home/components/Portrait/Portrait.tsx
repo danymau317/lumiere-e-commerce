@@ -5,7 +5,7 @@ type PortraitProps = {};
 
 export default function Portrait({}: PortraitProps) {
   return (
-    <section className="p-2 flex flex-col justify-center items-center my-5 lg:h-screen">
+    <section className="p-2 flex flex-col justify-center items-center my-3 lg:h-screen">
       <header className="flex flex-col items-center gap-2 text-center">
         <h2 className="font-inter tracking-[2px] uppercase text-lg text-text-secondary lg:text-sm ">
           Colección Primavera 2026

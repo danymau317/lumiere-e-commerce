@@ -1,7 +1,7 @@
-import { type ProductType } from "./productsType";
+import { type ProductsType } from "./productsType";
 
 export type ApiDummyType = {
-  products: ProductType[];
+  products: ProductsType[];
   total: number;
   skip?: number;
   limit: number;

@@ -29,7 +29,7 @@ const portraitImpactItems = [
 
 export default function PortraitImpact({}: PortraitImpactProps) {
   return (
-    <section className="border-y-2 border-y-navbar-border w-full my-20 flex flex-col justify-around gap-5 px-5 py-7 lg:flex-row">
+    <section className="border-y-2 border-y-navbar-border w-full my-2 flex flex-col justify-around gap-5 px-5 py-7 lg:flex-row">
       {portraitImpactItems.map((item) => (
         <PortraitImpactItem
           key={item.iconName}

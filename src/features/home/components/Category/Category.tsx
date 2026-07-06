@@ -5,6 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatchType, RootStateType } from "../../../../store/store";
 import { useEffect } from "react";
 import { fetchProducts } from "../../../../store/actions/productAction";
+import type { ProductType } from "../../../../store/types/productsType";
+
+import { categoryInfo } from "../../../../constants/categoryNames";
 
 type CategoryProps = {};
 
@@ -17,11 +20,33 @@ export default function Category({}: CategoryProps) {
   const { products } = useSelector((store: RootStateType) => store.products);
   const dispatch: AppDispatchType = useDispatch();
 
+  const groupedProducts = products.reduce(
+    (acc, product) => {
+      if (!acc[product.category]) {
+        acc[product.category] = [];
+      }
+
+      acc[product.category].push(product);
+
+      return acc;
+    },
+    {} as Record<string, ProductType[]>,
+  );
+
+  const categories = Object.entries(groupedProducts).map(
+    ([category, products]) => ({
+      img: products[0].thumbnail,
+      quantity: products.length,
+      title: categoryInfo[category]?.title ?? category,
+      description: categoryInfo[category]?.description ?? category,
+    }),
+  );
+
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  console.log(products);
+  console.log(groupedProducts);
 
   return (
     <section className="px-5 lg:px-10 border-2">
@@ -43,11 +68,7 @@ export default function Category({}: CategoryProps) {
         </div>
       </header>
 
-      {
-        //!Crear repo en github y hacer ui de cards de categorias
-      }
-
-      <CategoryItems />
+      <CategoryItems categories={categories} />
     </section>
   );
 }
