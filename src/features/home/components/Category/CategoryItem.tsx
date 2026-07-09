@@ -15,7 +15,7 @@ export default function CategoryItem({
 }: CategoryItemProps) {
   return (
     <article
-      className={`relative rounded-lg h-[35vh] p-5 bg-center bg-cover flex flex-col justify-end gap-1 ${className}`}
+      className={`group relative overflow-hidden rounded-lg h-[35vh] p-5 bg-center bg-cover flex flex-col justify-end gap-1 transition-transform duration-500 hover:scale-105 ${className}`}
       style={{
         backgroundImage: `linear-gradient(
       to bottom,
@@ -26,7 +26,7 @@ export default function CategoryItem({
     url(${img})`,
       }}
     >
-      <span className="material-symbols-outlined absolute top-5 left-56 rounded-md bg-gray-200">
+      <span className="material-symbols-outlined absolute top-5 right-10 opacity-0 rounded-md bg-[222,218,209] translate-y-full transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
         arrow_outward
       </span>
       <h2 className="font-playfair text-text-white-primary text-2xl">

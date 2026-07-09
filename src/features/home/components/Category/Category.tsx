@@ -2,12 +2,11 @@ import { Link } from "react-router-dom";
 
 import CategoryItems from "./CategoryItems";
 import { useDispatch, useSelector } from "react-redux";
-import type { AppDispatchType, RootStateType } from "../../../../store/store";
+import type { AppDispatchType, RootStateType } from "@/store/store";
 import { useEffect } from "react";
-import { fetchProducts } from "../../../../store/actions/productAction";
-import type { ProductType } from "../../../../store/types/productsType";
+import { fetchProducts } from "@/store/actions/productAction";
 
-import { categoryInfo } from "../../../../constants/categoryNames";
+import { getCategoriesProducts } from "@/utils/products/formatProductsUtils";
 
 type CategoryProps = {};
 
@@ -20,55 +19,35 @@ export default function Category({}: CategoryProps) {
   const { products } = useSelector((store: RootStateType) => store.products);
   const dispatch: AppDispatchType = useDispatch();
 
-  const groupedProducts = products.reduce(
-    (acc, product) => {
-      if (!acc[product.category]) {
-        acc[product.category] = [];
-      }
-
-      acc[product.category].push(product);
-
-      return acc;
-    },
-    {} as Record<string, ProductType[]>,
-  );
-
-  const categories = Object.entries(groupedProducts).map(
-    ([category, products]) => ({
-      img: products[0].thumbnail,
-      quantity: products.length,
-      title: categoryInfo[category]?.title ?? category,
-      description: categoryInfo[category]?.description ?? category,
-    }),
-  );
+  const categories = getCategoriesProducts(products);
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  console.log(groupedProducts);
-
   return (
-    <section className="px-5 lg:px-10 border-2">
-      <header>
+    <section className="px-5 lg:p-10">
+      <header className="lg:mb-10">
         <h2 className="text-2xl uppercase tracking-widest text-title-secondary font-light mb-1">
           Categorías
         </h2>
         <div className="flex flex-col lg:flex-row lg:justify-between">
-          <h2 className="font-playfair text-3xl text-title-primary font-semibold">
-            Explora por
+          <h2 className="font-playfair text-3xl text-title-primary font-semibold mb-2">
+            Explora por <span className="italic">categoría</span>
           </h2>
-          <h2 className="font-playfair text-3xl text-title-primary font-semibold italic mb-2">
-            categoría
-          </h2>
-          <Link to="" className="flex items-center gap-2">
+
+          {/*  */}
+          <Link
+            to="categories"
+            className="flex items-center gap-2 text-lg transition-colors duration-500 hover:text-title-secondary"
+          >
             Ver todas las Categorias
             <span className="material-symbols-outlined">arrow_outward</span>
           </Link>
         </div>
       </header>
 
-      <CategoryItems categories={categories} />
+      <CategoryItems categories={categories} limit={3} />
     </section>
   );
 }

@@ -1,9 +1,9 @@
-type CategoryType = {
+type CategoryInfo = {
   title: string;
   description: string;
 };
 
-export const categoryInfo: Record<string, CategoryType> = {
+export const categoryInfo: Record<string, CategoryInfo> = {
   beauty: {
     title: "Belleza",
     description: "Productos de belleza y cuidado personal.",
@@ -24,7 +24,7 @@ export const categoryInfo: Record<string, CategoryType> = {
     title: "Decoración",
     description: "Detalles que inspiran",
   },
-  "kitchen-accesories": {
+  "kitchen-accessories": {
     title: "Cocina",
     description: "Todo para cocinar mejor",
   },
@@ -32,19 +32,19 @@ export const categoryInfo: Record<string, CategoryType> = {
     title: "Laptops",
     description: "Potencia y portabilidad",
   },
-  "men-shirts": {
+  "mens-shirts": {
     title: "Camisas para Hombre",
     description: "Estilo para cada ocasión",
   },
-  "men-shoes": {
+  "mens-shoes": {
     title: "Zapatos para Hombre",
     description: "Comodidad con carácter",
   },
-  "men-watches": {
+  "mens-watches": {
     title: "Relojes para Hombre",
     description: "El tiempo con elegancia",
   },
-  "mobile-accesories": {
+  "mobile-accessories": {
     title: "Accesories Móviles",
     description: "Conectividad sin Límites",
   },

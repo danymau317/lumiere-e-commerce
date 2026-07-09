@@ -1,7 +1,5 @@
 import PortraitImpactItem from "./PortraitImpactItem";
 
-//! Cambiar colores por paleta ya creada
-
 type PortraitImpactProps = {};
 
 const portraitImpactItems = [

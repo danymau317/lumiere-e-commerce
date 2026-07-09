@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./features/home/Home";
 import MakeUp from "./features/make-up/MakeUp";
 import { type RootStateType } from "./store/store";
+import Categories from "./features/categories/Categories";
 
 export type ListDummyApiType = {
   products: DummyApiType[];
@@ -35,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/make-up" element={<MakeUp />} />
+          <Route path="/categories" element={<Categories />} />
         </Routes>
       </BrowserRouter>
     </>
