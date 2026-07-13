@@ -6,6 +6,7 @@ type SectionProps = {
   subtitleItalic?: string;
   description?: string;
   children?: ReactNode;
+  className?: string;
 };
 
 export default function Section({
@@ -14,25 +15,27 @@ export default function Section({
   subtitleItalic,
   description,
   children,
+  className,
 }: SectionProps) {
   return (
-    <section className="px-5 lg:p-10">
+    <section className={`${className}`}>
       <header className="lg:mb-10">
         <h2 className="text-2xl uppercase tracking-widest text-title-secondary font-light mb-1">
           {title}
         </h2>
-        <div className="flex flex-col lg:flex-row lg:justify-between">
+        <div className="flex flex-col">
           <h2 className="font-playfair text-3xl text-title-primary font-semibold mb-2">
             {subtitle}
-            {subtitleItalic && <span className="italic">categoría</span>}
+            {subtitleItalic && <span className="italic">{subtitleItalic}</span>}
           </h2>
           {description && (
-            <p className="text-text-secondary text-justify">{description}</p>
+            <p className="text-text-secondary text-justify mb-5">
+              {description}
+            </p>
           )}
-
-          {children}
         </div>
       </header>
+      {children}
     </section>
   );
 }

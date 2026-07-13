@@ -23,5 +23,6 @@ export function getCategoriesProducts(products: ProductType[]) {
     quantity: products.length,
     title: categoryInfo[category]?.title ?? category,
     description: categoryInfo[category]?.description ?? category,
+    path: category,
   }));
 }

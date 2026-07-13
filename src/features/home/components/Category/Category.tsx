@@ -36,7 +36,6 @@ export default function Category({}: CategoryProps) {
             Explora por <span className="italic">categoría</span>
           </h2>
 
-          {/*  */}
           <Link
             to="categories"
             className="flex items-center gap-2 text-lg transition-colors duration-500 hover:text-title-secondary"
@@ -47,7 +46,7 @@ export default function Category({}: CategoryProps) {
         </div>
       </header>
 
-      <CategoryItems categories={categories} limit={3} />
+      <CategoryItems categories={categories} limit={4} />
     </section>
   );
 }

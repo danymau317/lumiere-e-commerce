@@ -7,7 +7,7 @@ type BreadCrumbProps = {
 
 export default function BreadCrumb({ actualPath }: BreadCrumbProps) {
   const paths = actualPath.split("/").filter(Boolean);
-  const lastPath = paths.length;
+  const lastPath = paths.length - 1;
 
   return (
     <section className="p-5">
@@ -16,7 +16,7 @@ export default function BreadCrumb({ actualPath }: BreadCrumbProps) {
         {paths.map((segment, index) => (
           <span
             className="text-text-secondary"
-            style={{ fontWeight: `${index === lastPath ? "500" : "600"}` }}
+            style={{ fontWeight: index === lastPath ? "500" : "600" }}
             key={segment}
           >
             &gt; {capitalize(routeNames[segment]) ?? segment}

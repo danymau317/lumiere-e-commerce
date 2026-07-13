@@ -1,4 +1,15 @@
 export const routeNames: Record<string, string> = {
   products: "Productos",
   categories: "Categorias",
+  beauty: "Belleza",
+  fragrances: "fragancias",
+  furniture: "muebles",
+  groceries: "Alimentos",
+  "home-decoration": "Decoración",
+  "kitchen-accessories": "Accesorios de cocina",
+  laptops: "Laptops",
+  "mens-shirts": "Camisas para hombre",
+  "mens-shoes": "Zapatos para hombre",
+  "mens-watches": "Relojes para hombre",
+  "mobile-accessories": "Accesorios móviles",
 };

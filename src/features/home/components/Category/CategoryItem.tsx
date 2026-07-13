@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+
 export type CategoryItemProps = {
   className?: string;
   img: string;
   quantity: number;
   title: string;
   description: string;
+  path: string;
 };
 
 export default function CategoryItem({
@@ -12,10 +15,11 @@ export default function CategoryItem({
   quantity,
   title,
   description,
+  path,
 }: CategoryItemProps) {
   return (
     <article
-      className={`group relative overflow-hidden rounded-lg h-[35vh] p-5 bg-center bg-cover flex flex-col justify-end gap-1 transition-transform duration-500 hover:scale-105 ${className}`}
+      className={`group relative overflow-hidden rounded-lg h-[35vh] p-5 bg-center bg-cover flex flex-col justify-end gap-1 cursor-pointer transition-transform duration-500 hover:scale-105 ${className}`}
       style={{
         backgroundImage: `linear-gradient(
       to bottom,
@@ -26,16 +30,18 @@ export default function CategoryItem({
     url(${img})`,
       }}
     >
-      <span className="material-symbols-outlined absolute top-5 right-10 opacity-0 rounded-md bg-[222,218,209] translate-y-full transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-        arrow_outward
-      </span>
-      <h2 className="font-playfair text-text-white-primary text-2xl">
-        {title.charAt(0).toUpperCase() + title.slice(1)}
-      </h2>
-      <p className="text-sm text-text-gray-primary font-semibold">
-        {description}
-      </p>
-      <h2 className="text-sm text-text-gray-primary">{quantity} Productos</h2>
+      <Link to={`/categories/${path}`}>
+        <span className="material-symbols-outlined absolute top-5 right-10 opacity-0 rounded-md bg-[222,218,209] translate-y-full transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+          arrow_outward
+        </span>
+        <h2 className="font-playfair text-text-white-primary text-2xl">
+          {title.charAt(0).toUpperCase() + title.slice(1)}
+        </h2>
+        <p className="text-sm text-text-gray-primary font-semibold">
+          {description}
+        </p>
+        <h2 className="text-sm text-text-gray-primary">{quantity} Productos</h2>
+      </Link>
     </article>
   );
 }
