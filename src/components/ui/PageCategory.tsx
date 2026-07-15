@@ -16,7 +16,7 @@ export default function PageCategory({}: PageCategoryProps) {
     <section>
       <header>
         <NavBar />
-        <BreadCrumb actualPath={location.pathname} />
+        <BreadCrumb />
       </header>
       <article>
         <header>

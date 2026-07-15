@@ -10,15 +10,15 @@ const navSections = [
   },
   {
     description: "Maquillaje",
-    to: "make-up",
+    to: "/categories/beauty",
   },
   {
     description: "Fragancias",
-    to: "fragancy",
+    to: "/categories/fragrances",
   },
   {
     description: "Muebles",
-    to: "furniture",
+    to: "/categories/furniture",
   },
   {
     description: "Novedades",

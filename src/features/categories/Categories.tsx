@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import BreadCrumb from "@/components/ui/BreadCrumb";
 import NavBar from "@/components/Layout/NavBar/NavBar";
@@ -12,7 +11,6 @@ import { getCategoriesProducts } from "@/utils/products/formatProductsUtils";
 type CategoriesProps = {};
 
 export default function Categories({}: CategoriesProps) {
-  const location = useLocation();
   const { products } = useSelector((store: RootStateType) => store.products);
   const dispatch: AppDispatchType = useDispatch();
 
@@ -26,7 +24,7 @@ export default function Categories({}: CategoriesProps) {
     <section>
       <header>
         <NavBar />
-        <BreadCrumb actualPath={location.pathname} />
+        <BreadCrumb />
       </header>
       <Section
         className="px-5 lg:p-10"

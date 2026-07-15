@@ -30,7 +30,10 @@ export default function CategoryItem({
     url(${img})`,
       }}
     >
-      <Link to={`/categories/${path}`}>
+      <Link
+        to={`/categories/${path}`}
+        className="absolute inset-0 flex flex-col justify-end p-5"
+      >
         <span className="material-symbols-outlined absolute top-5 right-10 opacity-0 rounded-md bg-[222,218,209] translate-y-full transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
           arrow_outward
         </span>
