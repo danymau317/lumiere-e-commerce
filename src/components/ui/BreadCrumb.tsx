@@ -9,7 +9,7 @@ export default function BreadCrumb({}: BreadCrumbProps) {
   const paths = actualPath.split("/").filter(Boolean);
 
   return (
-    <section className="p-5 flex gap-1">
+    <section className="p-2 flex gap-1">
       <Link to="/" className="text-text-secondary">
         Inicio
       </Link>

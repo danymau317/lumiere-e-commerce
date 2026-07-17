@@ -1,3 +1,7 @@
 export function capitalize(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+export function replaceBlanks(string: string, character: string) {
+  return string.split(" ").join(character);
+}
